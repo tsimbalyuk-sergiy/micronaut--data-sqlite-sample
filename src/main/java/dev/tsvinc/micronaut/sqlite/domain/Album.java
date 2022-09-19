@@ -20,7 +20,6 @@ import java.util.Objects;
 public final class Album {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    //    @Column(name = "`id`", nullable = false)
     private Long id;
 
     @Column(name = "album_name", nullable = false)
@@ -34,13 +33,6 @@ public final class Album {
 
     @Column(name = "album_release_year", nullable = false)
     private Integer year;
-
-    public Album(String albumName, String artistName, String genre, Integer year) {
-        this.albumName = albumName;
-        this.artistName = artistName;
-        this.genre = genre;
-        this.year = year;
-    }
 
     @Override
     public boolean equals(Object o) {
