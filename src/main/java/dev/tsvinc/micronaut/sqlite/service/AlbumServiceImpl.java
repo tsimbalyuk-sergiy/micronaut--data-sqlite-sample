@@ -9,7 +9,6 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Singleton
 @RequiredArgsConstructor
@@ -27,7 +26,7 @@ public class AlbumServiceImpl implements AlbumService {
         return Optional.ofNullable(albumRepository.findByAlbumNameEquals(albumName))
                 .map(albums -> albums.stream()
                         .map(AlbumServiceImpl::mapAlbumToAlbumDto)
-                        .collect(Collectors.toList()))
+                        .toList())
                 .map(Optional::of)
                 .orElse(null);
     }

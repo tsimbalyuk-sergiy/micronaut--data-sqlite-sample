@@ -25,8 +25,6 @@ public class AlbumController {
         return albumService.getAnyFirstAlbum().map(HttpResponse::ok).orElse(HttpResponse.notFound());
     }
 
-
-
     @Get("/album/{name}")
     @Produces(value = MediaType.APPLICATION_JSON)
     public HttpResponse<List<AlbumDto>> getAlbumByName(@PathVariable String name) {

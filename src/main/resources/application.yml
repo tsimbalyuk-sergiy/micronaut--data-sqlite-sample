@@ -1,23 +1,24 @@
 micronaut:
-    application:
-        name: music-sorter
+  application:
+    name: music-sorter
 datasources:
-    default:
-#        url: jdbc:sqlite:${HOME}/.config/musicsorter/sqlite-sample.db
-        url: jdbc:sqlite:sqlite-sample.db
-        username: sa
-        password: ''
-        driverClassName: org.sqlite.JDBC
-        schema-generate: CREATE_DROP
-        dialect: SQLite
+  default:
+    #        url: jdbc:sqlite:${HOME}/.config/musicsorter/sqlite-sample.db
+    url: jdbc:sqlite:${SQLITE_FILE_LOCATION:sqlite-sample.db}
+    #        url: jdbc:sqlite:sqlite-sample.db
+    username: sa
+    password: ''
+    driverClassName: org.sqlite.JDBC
+    schema-generate: CREATE_DROP
+    dialect: SQLite
 jpa:
-    default:
-        properties:
-            hibernate:
-                hbm2ddl:
-                    auto: create-drop
-                show_sql: true
+  default:
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: create-drop
+        show_sql: true
 netty:
-    default:
-        allocator:
-            max-order: 3
+  default:
+    allocator:
+      max-order: 3
